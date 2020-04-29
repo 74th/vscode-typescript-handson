@@ -1,0 +1,9 @@
+{
+  "yaml.schemas": {
+    "Kubernetes": ["environment/manifests/**/**.yaml"],
+    "https://raw.githubusercontent.com/docker/compose/master/compose/config/config_schema_v3.8.json": [
+      "docker-compose.yaml",
+      "docker-compose.yml"
+    ]
+  }
+}

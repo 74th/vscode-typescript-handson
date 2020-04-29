@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: typescript-handson
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: instance
+  template:
+    metadata:
+      labels:
+        app: instance
+    spec:
+      containers:
+        - name: instance
+          image: 74th/vscode-typescript-handson:latest
+          ports:
+            - containerPort: 22
+          envFrom:
+            - configMapRef:
+                name: authorized-keys
+          resources:
+            limits:
+              cpu: "4"
+              memory: 4G
+            requests:
+              cpu: "100m"
+              memory: 1G
