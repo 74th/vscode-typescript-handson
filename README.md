@@ -56,4 +56,4 @@
 
 - ハンズオン中は Zoom を繋ぎっぱなしにしてください。morimoto さんと呼んでいただければ、応答します！
 - VSCode Meetup Slack にチャンネルを開設して、筆談が良い場合、
-- Live Share を活用しましょう！ Live Share で "Start collaboration session..." をクリックすると、クリップボードに Live Share のリンクが作成されます。これを Slack に共有して下さい。Live Share で聞きに行きます！
+- Live Share を活用しましょう！ Live Share で "Start collaboration session..." をクリックすると、クリップボードに Live Share のリンクが作成されます。これを Slack に共有して下さい。Live Share で実際のコードを見ながら聞きに行きます
