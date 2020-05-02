@@ -5,5 +5,7 @@
       "docker-compose.yaml",
       "docker-compose.yml"
     ]
-  }
+  },
+  "liveshare.allowGuestTaskControl": true,
+  "liveshare.allowGuestDebugControl": true
 }

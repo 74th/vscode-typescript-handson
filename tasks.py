@@ -12,6 +12,9 @@ def build_environment(c):
     settings_file = "/root/settings/settings.yaml"
     if not os.path.exists(settings_file):
         return
+    if os.path.exists(f"/home/{os_user}/.git"):
+        return
+
     with open(settings_file) as f:
         settings = yaml.load(f, Loader=yaml.FullLoader)
     sudo = f"sudo -u {os_user}"
@@ -25,16 +28,15 @@ def build_environment(c):
             c.run(f"{sudo} git fetch origin")
             c.run(f"{sudo} git checkout origin/master")
 
-        for command in settings.get("commends", []):
-            c.run(f"{sudo} {command}")
+        for command in settings.get("commands", []):
+            c.run(f"{sudo} npm install ")
 
         for user in settings.get("users", []):
-            c.run(f"{sudo} mkdir {user}")
+            c.run(f"{sudo} mkdir -p users/{user}")
             for file in settings.get("files", []):
-                c.run(f"{sudo} cp -rf {file} {user}/")
+                c.run(f"{sudo} cp -rf {file} users/{user}/")
 
         if "authorized_keys" in settings:
-            os.mkdir(f"/home/{os_user}/.ssh")
             with open(f"/home/{os_user}/.ssh/authorized_keys", "w") as f:
                 for key in settings["authorized_keys"]:
                     f.write( key + "\n")
@@ -42,10 +44,10 @@ def build_environment(c):
         c.run(f"chown -R {os_user}:{os_user} .")
 
 @task
-def keep_container(c):
-    time.sleep(60*60*24*365)
+def start_sshd(c):
+    c.run("/usr/sbin/sshd -D")
 
 @task
 def start(c):
     build_environment(c)
-    keep_container(c)
+    start_sshd(c)

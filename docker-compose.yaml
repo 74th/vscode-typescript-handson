@@ -7,5 +7,6 @@ services:
     volumes:
       - /home/nnyn/.ssh/authorized_keys:/home/ubuntu/.ssh/authorized_keys
       - /home/nnyn/Documents/vscode-typescript-hanson/environment/manifests/template/settings.yaml:/root/settings/settings.yaml
+      - /home/nnyn/Documents/vscode-typescript-hanson/tasks.py:/root/tasks.py
     ports:
       - 22

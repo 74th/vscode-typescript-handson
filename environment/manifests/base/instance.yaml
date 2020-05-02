@@ -17,9 +17,9 @@ spec:
           image: 74th/vscode-typescript-handson:latest
           ports:
             - containerPort: 22
-          envFrom:
-            - configMapRef:
-                name: authorized-keys
+          volumeMounts:
+            - mountPath: /root/settings/
+              name: settings
           resources:
             limits:
               cpu: "4"
@@ -27,3 +27,7 @@ spec:
             requests:
               cpu: "100m"
               memory: 1G
+      volumes:
+        - name: settings
+          configMap:
+            name: settings
