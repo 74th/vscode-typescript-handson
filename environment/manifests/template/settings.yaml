@@ -1,0 +1,17 @@
+repo: https://github.com/74th/vscode-typescript-handson.git
+users:
+  - morimoto
+  - atsushi
+files:
+  # copy to user dir
+  - .vscode/
+  - src/
+  - out/
+  - package.json
+  - .editorconfig
+  - entrypoint.sh
+  - tsconfig.json
+init_commands:
+  - npm install
+authorized_keys:
+  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCvkf2+E56XXsxBMlDBJuwM4v8pJ0FRsHKv65arfh7sjGAAl9yW3AWZyWneCCGH/emzoFq0/B6rquNjP+A7i1Kl5THsa2CTm2sLp23Zm7euV0PCdqIMP1GP91bCEXbht9iHYBq3aPBDI1BdzbBe/pndnPKFgQvK8mtvfXtLUpa4OJD0b+lnx0vbMKP3Xo2WRd8pc5QZKIEhDQ8Gq/IQN9j3Kbxf02ISxt3kyyRzfiw3wL0GhbeatMjDsNiABblx5WT+wiJjmegrFcb2nWKOKvcEd5pPlE1JRNhP6SyHz/UNmefRn3LPF+D5aI7LgOQuGyJVNdWsSxXLpuWp3CRbDhvB site@j74th.com

@@ -4,9 +4,8 @@ services:
     build:
       context: ./
     image: 74th/vscode-typescript-handson:latest
-    environment:
-      REPO: https://github.com/74th/vscode-typescript-handson.git
     volumes:
       - /home/nnyn/.ssh/authorized_keys:/home/ubuntu/.ssh/authorized_keys
+      - /home/nnyn/Documents/vscode-typescript-hanson/environment/manifests/template/settings.yaml:/root/settings/settings.yaml
     ports:
       - 22

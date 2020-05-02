@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    // npmモジュールを使う
+    "module": "commonjs",
+
+    // npmモジュールもimport文で読み込めるようにする
+    "esModuleInterop": true,
+
+    // 出力するJavaScriptのバージョン
+    // 'ES3', 'ES5', 'ES2015', 'ES2016', 'ES2017','ES2018' or 'ESNEXT'
+    "target": "ES2017",
+
+    // JavaScriptの出力フォルダ
+    "outDir": "./out",
+
+    // TypeScriptの絶対参照時に使えるフォルダ
+    // src/とtests/の2つのフォルダーを参照できるように、
+    // ワークスペースルートを指定する
+    "baseUrl": "./",
+
+    // ソースマップを出力する
+    "sourceMap": true,
+
+
+    // すべての箇所で型定義を強制する
+    "strict": true,
+
+    // vue.js でデコレータを使う
+    "experimentalDecorators": true,
+  }
+}

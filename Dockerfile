@@ -15,8 +15,13 @@ RUN apt-get update && apt-get install -y libicu66 libkrb5-3 zlib1g openssl gnome
 # For Dev
 RUN apt-get update && apt-get install -y git curl
 
-RUN apt-get update && apt-get install -y nodejs npm
-COPY ./entrypoint.sh /root/
+# Fro initialize task
+RUN apt-get update && apt-get install -y python3 python3-pip
+RUN pip3 install invoke pyyaml
+COPY tasks.py /root/
+
+# RUN apt-get update && apt-get install -y nodejs npm
 
 EXPOSE 22
-ENTRYPOINT ["bash", "/root/entrypoint.sh"]
+WORKDIR /root/
+CMD ["inv", "-e", "start"]
