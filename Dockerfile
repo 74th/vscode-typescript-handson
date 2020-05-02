@@ -10,7 +10,7 @@ RUN echo "ubuntu ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
 RUN echo "Set disable_coredump false" >> /etc/sudo.conf
 
 # For Live Share
-RUN apt-get update && apt-get install -y gnome-keyring desktop-file-utils
+RUN apt-get update && apt-get install -y libicu66 libkrb5-3 zlib1g openssl gnome-keyring desktop-file-utils desktop-file-utils x11-utils
 
 # For Dev
 RUN apt-get update && apt-get install -y git curl
