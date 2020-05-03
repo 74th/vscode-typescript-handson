@@ -16,7 +16,7 @@
       "problemMatcher": ["$tsc"]
     },
     {
-      "label": "webpack build",
+      "label": "morimoto webpack build",
       "command": ["${workspaceFolder}/node_modules/.bin/webpack"],
       "type": "shell",
       "group": {
