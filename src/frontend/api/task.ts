@@ -1,4 +1,4 @@
-import { ITask } from "../../model/task/task";
+import { ITask } from "../../model/task/morimoto_task";
 
 export async function loadTasks(): Promise<ITask[]> {
   const url = "/api/tasks";

@@ -1,5 +1,5 @@
 import { Component, Vue } from "vue-property-decorator";
-import { ITask } from "../../model/task/task";
+import { ITask } from "../../model/task/morimoto_task";
 import { loadTasks, postTaskDone } from "../api/task";
 
 @Component
