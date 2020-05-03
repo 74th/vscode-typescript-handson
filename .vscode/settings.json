@@ -28,10 +28,6 @@
     "**/bower_components": true,
     "**/*.code-search": true
   },
-
-  // Live Share
-  "liveshare.allowGuestTaskControl": true,
-  "liveshare.allowGuestDebugControl": true,
   // --- mocha の設定 ---
   // Mochaはnode_modules内のパッケージを使う
   "mochaExplorer.mochaPath": "./node_modules/mocha",
