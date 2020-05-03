@@ -16,10 +16,7 @@ export class TaskListView extends Vue {
     }
 
     public async clickDone(task: ITask): Promise<void> {
-        // TODO: Doneをクリックした時に、
-
         await postTaskDone(task);
-        //
         await this.loadTasks();
     }
 }

@@ -1,6 +1,4 @@
 {
-  // See https://go.microsoft.com/fwlink/?LinkId=733558
-  // for the documentation about the tasks.json format
   "version": "2.0.0",
   "tasks": [
     {
@@ -32,7 +30,13 @@
     },
     {
       "label": "webpack build (watch)",
-      "command": ["${workspaceFolder}/node_modules/.bin/webpack -w"],
+      "command": ["${workspaceFolder}/node_modules/.bin/webpack"],
+      "args": [
+        "-w",
+        "./src/frontend/morimoto_index.ts",
+        "--output",
+        "./public/html/js/morimoto_index.js"
+      ],
       "type": "shell",
       "problemMatcher": ["$tsc"],
       "isBackground": true,

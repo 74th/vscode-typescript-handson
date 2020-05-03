@@ -1,5 +1,12 @@
 {
   "recommendations": [
+    "streetsidesoftware.code-spell-checker",
+    "msjsdiag.debugger-for-chrome",
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "hbenl.vscode-test-explorer-liveshare",
+    "wayou.vscode-todo-highlight",
+    "ms-vsliveshare.vsliveshare-pack",
     "hbenl.vscode-test-explorer",
     "hbenl.vscode-mocha-test-adapter"
   ]
