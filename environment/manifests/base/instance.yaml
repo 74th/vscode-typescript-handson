@@ -1,8 +1,9 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: typescript-handson
 spec:
+  serviceName: typescript-handson
   replicas: 1
   selector:
     matchLabels:
@@ -20,14 +21,28 @@ spec:
           volumeMounts:
             - mountPath: /root/settings/
               name: settings
+            - mountPath: /home/ubuntu/
+              name: ubuntu-home
           resources:
             limits:
-              cpu: "4"
-              memory: 4G
+              cpu: "7.2"
+              memory: 60G
             requests:
-              cpu: "100m"
+              cpu: "1"
               memory: 1G
+            # requests:
+            #   cpu: "7.2"
+            #   memory: 60G
       volumes:
         - name: settings
           configMap:
             name: settings
+  volumeClaimTemplates:
+    - metadata:
+        name: ubuntu-home
+      spec:
+        accessModes: [ReadWriteOnce]
+        storageClassName: managed-premium
+        resources:
+          requests:
+            storage: 100Gi

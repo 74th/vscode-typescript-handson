@@ -22,6 +22,9 @@ export TF_VAR_client_secret=<client_password>
 terraform init
 terraform apply
 
+# kube_config
+terraform output kube_config > ../azurek8s
+
 # destroy
 terraform destroy
 ```

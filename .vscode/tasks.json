@@ -7,53 +7,39 @@
       "type": "typescript",
       "label": "tsc watch",
       "tsconfig": "tsconfig.json",
-      "problemMatcher": [
-        "$tsc"
-      ]
+      "problemMatcher": ["$tsc"]
     },
     {
       "type": "typescript",
       "label": "tsc build",
       "tsconfig": "tsconfig.json",
-      "problemMatcher": [
-        "$tsc"
-      ]
+      "problemMatcher": ["$tsc"]
     },
     {
       "label": "webpack build",
-      "command": [
-        "${workspaceFolder}/node_modules/.bin/webpack"
-      ],
+      "command": ["${workspaceFolder}/node_modules/.bin/webpack"],
       "type": "shell",
       "group": {
         "kind": "build",
         "isDefault": true
       },
-      "problemMatcher": [
-        "$tsc"
-      ]
+      "problemMatcher": ["$tsc"]
     },
     {
-     "label": "webpack build (watch)",
-      "command": [
-        "${workspaceFolder}/node_modules/.bin/webpack -w"
-      ],
+      "label": "webpack build (watch)",
+      "command": ["${workspaceFolder}/node_modules/.bin/webpack -w"],
       "type": "shell",
-      "problemMatcher": [
-        "$tsc"
-      ],
+      "problemMatcher": ["$tsc"],
       "isBackground": true,
       "runOptions": {
-        "runOn": "folderOpen",
+        "runOn": "folderOpen"
       }
     },
     {
       "type": "typescript",
       "tsconfig": "tsconfig.json",
       "option": "watch",
-      "problemMatcher": [
-        "$tsc-watch"
-      ],
+      "problemMatcher": ["$tsc-watch"],
       "group": "build"
     }
   ]

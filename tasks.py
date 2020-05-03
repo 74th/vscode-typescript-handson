@@ -17,26 +17,35 @@ def build_environment(c):
 
     with open(settings_file) as f:
         settings = yaml.load(f, Loader=yaml.FullLoader)
-    sudo = f"sudo -u {os_user}"
+
+    c.run(f"chmod 755 /home/ubuntu")
+    c.run(f"chown ubuntu:ubuntu /home/ubuntu")
+
+    user_do = f"sudo -u {os_user}"
+
 
     with c.cd(f"/home/{os_user}/"):
 
+        c.run(f"{user_do} cp /etc/skel/.profile /etc/skel/.bashrc ./")
+
         if "repo" in settings:
             repo = settings["repo"]
-            c.run(f"{sudo} git init")
-            c.run(f"{sudo} git remote add origin {repo}")
-            c.run(f"{sudo} git fetch origin")
-            c.run(f"{sudo} git checkout origin/master")
+            c.run(f"{user_do} git init")
+            c.run(f"{user_do} git remote add origin {repo}")
+            c.run(f"{user_do} git fetch origin")
+            c.run(f"{user_do} git checkout origin/master")
 
         for command in settings.get("commands", []):
-            c.run(f"{sudo} npm install ")
+            c.run(f"{user_do} npm install ")
 
         for user in settings.get("users", []):
-            c.run(f"{sudo} mkdir -p users/{user}")
+            c.run(f"{user_do} mkdir -p users/{user}")
             for file in settings.get("files", []):
-                c.run(f"{sudo} cp -rf {file} users/{user}/")
+                c.run(f"{user_do} cp -rf {file} users/{user}/")
 
         if "authorized_keys" in settings:
+            c.run(f"{user_do} mkdir -p /home/{os_user}/.ssh")
+            c.run(f"{user_do} chmod 755 /home/{os_user}/.ssh")
             with open(f"/home/{os_user}/.ssh/authorized_keys", "w") as f:
                 for key in settings["authorized_keys"]:
                     f.write( key + "\n")
