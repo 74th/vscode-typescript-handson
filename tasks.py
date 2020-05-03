@@ -1,11 +1,13 @@
 import os
 import os.path
 import time
+import json
 
 from invoke import task
 import yaml
 
 os_user = "ubuntu"
+
 
 @task
 def build_environment(c):
@@ -48,6 +50,32 @@ def build_environment(c):
                     content = origin_content.replace("morimoto", user)
                     with open(f"{dir_path}/{file_name}", "w") as f:
                         f.write(content)
+
+        with open(f"{user_home}/main/.vscode/launch.json") as f:
+            launch_json = json.load(f)
+        for i, user in enumerate(settings.get("users", [])):
+            for n in [0, 1, 2]:
+                d = dict(launch_json["configurations"][n])
+                d["name"] = d["name"].replace("morimoto", user)
+                if "env" in d:
+                    d["env"]["PORT"] = str(8080 + i)
+                if "url" in d:
+                    d["url"] = d["url"].replace("8080", str(8080 + i))
+                launch_json["configurations"].append(d)
+        with open(f"{user_home}/main/.vscode/launch.json", "w") as f:
+            json.dump(launch_json, f, indent=2, separators=(",", ": "))
+
+        with open(f"{user_home}/main/.vscode/tasks.json") as f:
+            tasks_json = json.load(f)
+        for i, user in enumerate(settings.get("users", [])):
+            for n in [2, 3]:
+                d = dict(tasks_json["tasks"][n])
+                d["label"] = d["label"].replace("morimoto", user)
+                d["args"] = [a.replace("morimoto", user) for a in d["args"]]
+                tasks_json["tasks"].append(d)
+        with open(f"{user_home}/main/.vscode/tasks.json", "w") as f:
+            json.dump(tasks_json, f, indent=2, separators=(",", ": "))
+
         for user in settings.get("users", []):
             c.run(f"cp -rf main {user}")
 
@@ -56,13 +84,15 @@ def build_environment(c):
             c.run(f"{user_do} chmod 755 /home/{os_user}/.ssh")
             with open(f"/home/{os_user}/.ssh/authorized_keys", "w") as f:
                 for key in settings["authorized_keys"]:
-                    f.write( key + "\n")
+                    f.write(key + "\n")
 
             c.run(f"chown -R {os_user}:{os_user} .")
+
 
 @task
 def start_sshd(c):
     c.run("/usr/sbin/sshd -D")
+
 
 @task
 def start(c):
