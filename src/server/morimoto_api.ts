@@ -82,5 +82,6 @@ export class API {
 
         // TODO: idのタスクを完了にする
 
+        res.json({})
     };
 }

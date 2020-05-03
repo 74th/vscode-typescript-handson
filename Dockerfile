@@ -13,7 +13,7 @@ RUN echo "Set disable_coredump false" >> /etc/sudo.conf
 RUN apt-get update && apt-get install -y libicu66 libkrb5-3 zlib1g openssl gnome-keyring desktop-file-utils desktop-file-utils x11-utils
 
 # Dev
-RUN apt-get update && apt-get install -y git curl
+RUN apt-get update && apt-get install -y git curl jq
 
 # initialize task
 RUN apt-get update && apt-get install -y python3 python3-pip

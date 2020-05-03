@@ -18,14 +18,14 @@
     // ワークスペースルートを指定する
     "baseUrl": "./",
 
-    // ソースマップを出力する
+    // ソースマップ を出力する
     "sourceMap": true,
-
 
     // すべての箇所で型定義を強制する
     "strict": true,
 
     // vue.js でデコレータを使う
-    "experimentalDecorators": true,
-  }
+    "experimentalDecorators": true
+  },
+  "exclude": ["tmp", "users"]
 }

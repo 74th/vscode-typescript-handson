@@ -1,22 +1,18 @@
 repo: https://github.com/74th/vscode-typescript-handson.git
 users:
-  - morimoto
   - atsushi
-files:
-  # copy to user dir
-  - .vscode
-  - src
-  - tests
-  - public
-  - out
-  - node_modules
-  - package.json
-  - .editorconfig
-  - tsconfig.json
-  - tslint.json
-  - webpack.config.js
-  - package.json
-  - package-lock.json
+copy_files:
+  - src/model/task/morimoto_repository.ts
+  - src/model/task/morimoto_task.ts
+  - src/server/morimoto_api.ts
+  - src/server/morimoto_main.ts
+  - src/frontend/api/morimoto_task.ts
+  - src/frontend/views/morimoto_newTask.ts
+  - src/frontend/views/morimoto_taskList.ts
+  - src/frontend/morimoto_index.ts
+  - tests/model/task/morimoto_repository_test.ts
+copy_replace:
+  - morimoto
 commands:
   - npm install --silent ; exit
 authorized_keys:

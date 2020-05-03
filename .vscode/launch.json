@@ -8,7 +8,6 @@
       "type": "node",
       "request": "launch",
       "name": "morimoto Launch Server",
-      "stopOnEntry": true,
       "preLaunchTask": "tsc build",
       "program": "${workspaceFolder}/out/src/server/morimoto_main.js",
       "outFiles": ["${workspaceFolder}/**/*.js"]
@@ -26,7 +25,7 @@
       "name": "morimoto Launch Chrome",
       "url": "http://localhost:8080",
       "webRoot": "${workspaceFolder}/public/html",
-      "preLaunchTask": "webpack build",
+      "preLaunchTask": "morimoto webpack build",
       "sourceMapPathOverrides": {
         "webpack:///./src/*": "${workspaceRoot}/src/*"
       },

@@ -18,6 +18,11 @@
     {
       "label": "morimoto webpack build",
       "command": ["${workspaceFolder}/node_modules/.bin/webpack"],
+      "args": [
+        "./src/frontend/morimoto_index.ts",
+        "--output",
+        "./public/html/js/morimoto_index.js"
+      ],
       "type": "shell",
       "group": {
         "kind": "build",
