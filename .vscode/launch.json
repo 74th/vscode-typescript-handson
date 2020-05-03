@@ -5,6 +5,9 @@
       "type": "node",
       "request": "launch",
       "name": "morimoto Launch Server",
+      "env": {
+        "PORT": "8080"
+      },
       "preLaunchTask": "tsc build",
       "program": "${workspaceFolder}/out/src/server/morimoto_main.js",
       "outFiles": ["${workspaceFolder}/**/*.js"]
@@ -13,6 +16,9 @@
       "type": "node",
       "request": "launch",
       "name": "morimoto Launch Server(ts-node)",
+      "env": {
+        "PORT": "8080"
+      },
       "runtimeArgs": ["-r", "ts-node/register"],
       "args": ["${workspaceFolder}/src/server/morimoto_main.ts"]
     },
