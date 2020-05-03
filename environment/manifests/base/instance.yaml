@@ -25,11 +25,11 @@ spec:
               name: ubuntu-home
           resources:
             limits:
-              cpu: "7.2"
-              memory: 60G
+              cpu: 7000m
+              memory: 25G
             requests:
-              cpu: "7.2"
-              memory: 60G
+              cpu: 7000m
+              memory: 25G
       volumes:
         - name: settings
           configMap:
@@ -39,7 +39,7 @@ spec:
         name: ubuntu-home
       spec:
         accessModes: [ReadWriteOnce]
-        storageClassName: managed-premium
+        storageClassName: default
         resources:
           requests:
             storage: 100Gi
