@@ -11,10 +11,9 @@ resource "azurerm_kubernetes_cluster" "k8s" {
   dns_prefix          = "vscode-typescript-handson"
 
   default_node_pool {
-    name            = "agentpool"
-    node_count      = "1"
-    vm_size         = "Standard_B8ms"
-    os_disk_size_gb = "100G"
+    name       = "agentpool"
+    node_count = "1"
+    vm_size    = "Standard_B8ms"
   }
 
   service_principal {
