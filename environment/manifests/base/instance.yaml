@@ -28,11 +28,8 @@ spec:
               cpu: "7.2"
               memory: 60G
             requests:
-              cpu: "1"
-              memory: 1G
-            # requests:
-            #   cpu: "7.2"
-            #   memory: 60G
+              cpu: "7.2"
+              memory: 60G
       volumes:
         - name: settings
           configMap:
