@@ -57,6 +57,8 @@ def build_environment(c):
             for n in [0, 1, 2]:
                 d = dict(launch_json["configurations"][n])
                 d["name"] = d["name"].replace("morimoto", user)
+                if "preLaunchTask" in d:
+                    d["preLaunchTask"] = d["preLaunchTask"].replace("morimoto", user)
                 if "env" in d:
                     d["env"]["PORT"] = str(8080 + i)
                 if "url" in d:

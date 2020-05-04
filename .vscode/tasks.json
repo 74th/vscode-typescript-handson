@@ -29,7 +29,7 @@
       "problemMatcher": ["$tsc"]
     },
     {
-      "label": "webpack build (watch)",
+      "label": "morimoto webpack build (watch)",
       "command": ["${workspaceFolder}/node_modules/.bin/webpack"],
       "args": [
         "-w",
