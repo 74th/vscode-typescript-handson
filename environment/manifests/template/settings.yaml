@@ -11,6 +11,7 @@ copy_files:
   - src/frontend/views/morimoto_taskList.ts
   - src/frontend/morimoto_index.ts
   - tests/model/task/morimoto_repository_test.ts
+  - public/html/morimoto_index.html
 copy_replace:
   - morimoto
 commands:
