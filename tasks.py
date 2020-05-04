@@ -60,9 +60,10 @@ def build_environment(c):
                 if "preLaunchTask" in d:
                     d["preLaunchTask"] = d["preLaunchTask"].replace("morimoto", user)
                 if "env" in d:
-                    d["env"]["PORT"] = str(8080 + i)
+                    d["env"] = {"PORT": str(8081 + i)}
                 if "url" in d:
-                    d["url"] = d["url"].replace("8080", str(8080 + i))
+                    d["url"] = d["url"].replace("8080", str(8081 + i))
+                    d["url"] = d["url"].replace("morimoto", user)
                 launch_json["configurations"].append(d)
         with open(f"{user_home}/main/.vscode/launch.json", "w") as f:
             json.dump(launch_json, f, indent=2, separators=(",", ": "))
