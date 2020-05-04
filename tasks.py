@@ -64,6 +64,8 @@ def build_environment(c):
                 if "url" in d:
                     d["url"] = d["url"].replace("8080", str(8081 + i))
                     d["url"] = d["url"].replace("morimoto", user)
+                if "args" in d:
+                    d["args"] = [a.replace("morimoto", user) for a in d["args"]]
                 launch_json["configurations"].append(d)
         with open(f"{user_home}/main/.vscode/launch.json", "w") as f:
             json.dump(launch_json, f, indent=2, separators=(",", ": "))

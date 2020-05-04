@@ -1,6 +1,8 @@
 repo: https://github.com/74th/vscode-typescript-handson.git
 users:
-  - atsushi
+  - user1
+  - user2
+  - user3
 copy_files:
   - src/model/task/morimoto_repository.ts
   - src/model/task/morimoto_task.ts
