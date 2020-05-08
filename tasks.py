@@ -1,3 +1,6 @@
+# py-invoke http://www.pyinvoke.org/
+# this is used from remote_k8s.Dockerfile for k8s remote environment
+
 import os
 import os.path
 import time

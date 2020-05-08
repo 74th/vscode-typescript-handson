@@ -8,6 +8,7 @@
     "wayou.vscode-todo-highlight",
     "ms-vsliveshare.vsliveshare-pack",
     "hbenl.vscode-test-explorer",
-    "hbenl.vscode-mocha-test-adapter"
+    "hbenl.vscode-mocha-test-adapter",
+    "redhat.vscode-yaml",
   ]
 }
