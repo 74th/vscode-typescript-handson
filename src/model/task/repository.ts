@@ -1,4 +1,4 @@
-import { ITask } from "./morimoto_task";
+import { ITask } from "./task";
 
 /**
  * タスクを格納するリポジトリ

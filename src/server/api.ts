@@ -1,7 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
-import { Repository } from "../model/task/morimoto_repository";
-import { ITask } from "../model/task/morimoto_task";
+import { Repository } from "../model/task/repository";
+import { ITask } from "../model/task/task";
 
 /**
  * APIの設定

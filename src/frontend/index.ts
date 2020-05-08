@@ -1,5 +1,5 @@
-import { TaskListView } from "./views/morimoto_taskList";
-import { NewTaskView } from "./views/morimoto_newTask";
+import { TaskListView } from "./views/taskList";
+import { NewTaskView } from "./views/newTask";
 
 /**
  * フロントエンドのルート

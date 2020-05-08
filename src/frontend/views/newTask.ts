@@ -1,6 +1,6 @@
 import { Component, Vue } from "vue-property-decorator";
-import { ITask } from "../../model/task/morimoto_task";
-import { postTask } from "../api/morimoto_task";
+import { ITask } from "../../model/task/task";
+import { postTask } from "../api/task";
 
 /**
  * タスク追加ボタン

@@ -1,4 +1,4 @@
-import * as api from "./morimoto_api";
+import * as api from "./api";
 import * as process from "process"
 
 var port = "8080";

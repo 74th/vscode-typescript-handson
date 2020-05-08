@@ -1,4 +1,4 @@
-import { ITask } from "../../model/task/morimoto_task";
+import { ITask } from "../../model/task/task";
 
 /**
  * フロントエンドにおいて、APIへのアクセスを担うモジュール

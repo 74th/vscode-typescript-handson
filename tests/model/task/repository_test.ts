@@ -1,9 +1,9 @@
-import { ITask } from "src/model/task/morimoto_task";
+import { ITask } from "src/model/task/task";
 import { describe, Suite, it } from "mocha";
-import { Repository } from "src/model/task/morimoto_repository";
+import { Repository } from "src/model/task/repository";
 import * as assert from "assert";
 
-describe("morimoto Task repository", () => {
+describe("Task repository", () => {
 
     it("初期化されたときには、2レコード含まれていること", () => {
         // タスクリポジトリ
@@ -48,6 +48,7 @@ describe("morimoto Task repository", () => {
         // TODO: タスクを完了にする
 
         // TODO: タスクが完了になって、見えなくなっていること
-
+        tasks = repo.ListTasks();
+        assert.equal(tasks.length, 1)
     });
 });

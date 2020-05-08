@@ -1,6 +1,6 @@
 import { Component, Vue } from "vue-property-decorator";
-import { ITask } from "../../model/task/morimoto_task";
-import { loadTasks, postTaskDone } from "../api/morimoto_task";
+import { ITask } from "../../model/task/task";
+import { loadTasks, postTaskDone } from "../api/task";
 
 /**
  * タスクの一覧と、個々のタスク

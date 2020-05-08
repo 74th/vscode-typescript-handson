@@ -14,12 +14,12 @@
       "problemMatcher": ["$tsc"]
     },
     {
-      "label": "morimoto webpack build",
+      "label": "webpack build",
       "command": ["${workspaceFolder}/node_modules/.bin/webpack"],
       "args": [
-        "./src/frontend/morimoto_index.ts",
+        "./src/frontend/index.ts",
         "--output",
-        "./public/html/js/morimoto_index.js"
+        "./public/html/js/index.js"
       ],
       "type": "shell",
       "group": {
@@ -29,13 +29,13 @@
       "problemMatcher": ["$tsc"]
     },
     {
-      "label": "morimoto webpack build (watch)",
+      "label": "webpack build (watch)",
       "command": ["${workspaceFolder}/node_modules/.bin/webpack"],
       "args": [
         "-w",
-        "./src/frontend/morimoto_index.ts",
+        "./src/frontend/index.ts",
         "--output",
-        "./public/html/js/morimoto_index.js"
+        "./public/html/js/index.js"
       ],
       "type": "shell",
       "problemMatcher": ["$tsc"],

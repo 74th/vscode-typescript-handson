@@ -4,31 +4,31 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "morimoto Launch Server",
+      "name": "Launch Server",
       "env": {
         "PORT": "8080"
       },
       "preLaunchTask": "tsc build",
-      "program": "${workspaceFolder}/out/src/server/morimoto_main.js",
+      "program": "${workspaceFolder}/out/src/server/main.js",
       "outFiles": ["${workspaceFolder}/**/*.js"]
     },
     {
       "type": "node",
       "request": "launch",
-      "name": "morimoto Launch Server(ts-node)",
+      "name": "Launch Server(ts-node)",
       "env": {
         "PORT": "8080"
       },
       "runtimeArgs": ["-r", "ts-node/register"],
-      "args": ["${workspaceFolder}/src/server/morimoto_main.ts"]
+      "args": ["${workspaceFolder}/src/server/main.ts"]
     },
     {
       "type": "chrome",
       "request": "launch",
-      "name": "morimoto Launch Chrome",
-      "url": "http://localhost:8080/morimoto_index.html",
+      "name": "Launch Chrome",
+      "url": "http://localhost:8080/index.html",
       "webRoot": "${workspaceFolder}/public/html",
-      "preLaunchTask": "morimoto webpack build",
+      "preLaunchTask": "webpack build",
       "sourceMapPathOverrides": {
         "webpack:///./src/*": "${workspaceRoot}/src/*"
       },
