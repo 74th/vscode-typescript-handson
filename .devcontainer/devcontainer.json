@@ -1,34 +1,30 @@
-// For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.114.0/containers/docker-existing-dockerfile
 {
-  "name": "Existing Dockerfile",
-
-  // Sets the run context to one level up instead of the .devcontainer folder.
-  "context": ".",
-
-  // Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
-  "dockerFile": "./Dockerfile",
-
+  // copy from https://github.com/microsoft/vscode-dev-containers/blob/master/containers/typescript-node-12/.devcontainer/devcontainer.json
+  "name": "Node.js 12 & TypeScript",
+  "dockerFile": "Dockerfile",
   // Set *default* container specific settings.json values on container create.
   "settings": {
-    "terminal.integrated.shell.linux": null
+    "terminal.integrated.shell.linux": "/bin/bash"
   },
-
   // Add the IDs of extensions you want installed when the container is created.
-  "extensions": []
-
+  "extensions": [
+    "streetsidesoftware.code-spell-checker",
+    "msjsdiag.debugger-for-chrome",
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "hbenl.vscode-test-explorer-liveshare",
+    "wayou.vscode-todo-highlight",
+    "ms-vsliveshare.vsliveshare-pack",
+    "hbenl.vscode-test-explorer",
+    "hbenl.vscode-mocha-test-adapter",
+    "redhat.vscode-yaml",
+  ],
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  // "forwardPorts": [],
-
-  // Uncomment the next line to run commands after the container is created - for example installing git.
-  // "postCreateCommand": "apt-get update && apt-get install -y git",
-
-  // Uncomment when using a ptrace-based debugger like C++, Go, and Rust
-  // "runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
-
-  // Uncomment to use the Docker CLI from inside the container. See https://aka.ms/vscode-remote/samples/docker-in-docker.
-  // "mounts": [ "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind" ],
-
+  "forwardPorts": [
+    8080
+  ],
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "npm install"
   // Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
-  // "remoteUser": "vscode"
+  // "remoteUser": "node"
 }
