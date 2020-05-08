@@ -1,6 +1,0 @@
-bases:
-  - ../base
-configMapGenerator:
-  - name: settings
-    files:
-      - settings.yaml
