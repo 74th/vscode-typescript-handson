@@ -43,3 +43,4 @@ RUN if [ "$USER_GID" != "1000" ] || [ "$USER_UID" != "1000" ]; then \
 
 # Uncomment to default to non-root user
 # USER $USER_UID
+RUN apt-get update && apt-get install -y jq
